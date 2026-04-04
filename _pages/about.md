@@ -208,21 +208,29 @@ redirect_from:
 }
 .exp-logo {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 0.7em;
-  color: #fff;
-  margin-top: 0.1em;
+  margin-top: 0.15em;
+  background: var(--global-code-background-color, #f5f5f5);
+  border: 1px solid var(--global-border-color, #e0e0e0);
 }
-.exp-logo.openai { background: #000; }
-.exp-logo.microsoft { background: #00a4ef; }
-.exp-logo.celestra { background: #6c5ce7; }
-.exp-logo.judgment { background: #e17055; }
+.exp-logo img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.exp-logo.celestra {
+  font-weight: 800;
+  font-size: 0.6em;
+  color: #6c5ce7;
+  background: #f0ecff;
+  border-color: #d5cdff;
+}
 .exp-body {
   flex: 1;
 }
@@ -402,19 +410,19 @@ Previously, I worked at <b><a href="https://celestra.com/">Celestra</a></b> and 
 <h2><i class="fas fa-briefcase"></i> Industry Experience</h2>
 
 <div class="exp-entry">
-  <div class="exp-logo openai">OAI</div>
+  <div class="exp-logo"><img src="/images/logos/openai.svg" alt="OpenAI"></div>
   <div class="exp-body">
     <div class="exp-header">
       <span class="exp-company">OpenAI</span>
       <span class="exp-date">Jun 2026 -- Sep 2026</span>
     </div>
-    <div class="exp-role">Member of Technical Staff Intern, Integrity Team</div>
+    <div class="exp-role">Member of Technical Staff Intern</div>
     <div class="exp-desc">Incoming summer 2026.</div>
   </div>
 </div>
 
 <div class="exp-entry">
-  <div class="exp-logo microsoft">MS</div>
+  <div class="exp-logo"><img src="/images/logos/microsoft.svg" alt="Microsoft"></div>
   <div class="exp-body">
     <div class="exp-header">
       <span class="exp-company">Microsoft</span>
@@ -432,20 +440,20 @@ Previously, I worked at <b><a href="https://celestra.com/">Celestra</a></b> and 
       <span class="exp-company">Celestra</span>
       <span class="exp-date">Sep 2025 -- Dec 2025</span>
     </div>
-    <div class="exp-role">Research Scientist Intern</div>
+    <div class="exp-role">Research Intern</div>
     <div class="exp-desc">Co-authored agent scaffolding research (4,000+ ablations; ICML 2026) and deployed agent stack achieving top-3 on MLE-Bench.</div>
   </div>
 </div>
 
 <div class="exp-entry">
-  <div class="exp-logo judgment">JL</div>
+  <div class="exp-logo"><img src="/images/logos/judgment.png" alt="Judgment Labs"></div>
   <div class="exp-body">
     <div class="exp-header">
       <span class="exp-company">Judgment Labs</span>
       <span class="exp-date">Jan 2025 -- Sep 2025</span>
     </div>
     <div class="exp-role">Member of Technical Staff</div>
-    <div class="exp-desc">First hire; led RL-tuned LLM evaluations (+40-45% alignment over LLM-as-judge baselines) and agent SFT optimization.</div>
+    <div class="exp-desc">Full-stack development across backend and frontend; built LLM trace bucketing for automated grouping and natural language search and classification using embedding models.</div>
   </div>
 </div>
 
