@@ -137,14 +137,7 @@
         </span>
       {% endif %}
       {% if entry.annotation %}
-        <i
-          class="fa-solid fa-circle-info ml-1"
-          data-toggle="popover"
-          data-placement="top"
-          data-html="true"
-          data-content="{{ entry.annotation | escape }}"
-        >
-        </i>
+        <br><span class="annotation-text" style="font-size:0.85em;color:var(--global-text-color-light);font-style:italic;">{{ entry.annotation }}</span>
       {% endif %}
     </div>
 
@@ -183,9 +176,11 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    {% if entry.note %}
+      <div class="periodical" style="font-style:italic;color:var(--global-text-color-light);font-size:0.9em;">
+        {{ entry.note | strip }}
+      </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">

@@ -37,6 +37,43 @@ body.sticky-bottom-footer {
 .profile {
   img {
     width: 100%;
+    &.rounded-lg {
+      border-radius: 12px !important;
+    }
+  }
+
+  .profile-social {
+    margin-top: 0.8rem;
+    text-align: center;
+
+    .contact-icons {
+      font-size: 1.4rem !important;
+
+      a {
+        margin: 0 0.3rem;
+
+        i::before {
+          font-size: 1.4rem;
+        }
+
+        img {
+          width: 1.4rem !important;
+          height: 1.4rem !important;
+          margin-bottom: 0 !important;
+        }
+
+        svg {
+          width: 1.4rem !important;
+          height: 1.4rem !important;
+          margin-bottom: 0 !important;
+
+          image {
+            width: 1.4rem !important;
+            height: 1.4rem !important;
+          }
+        }
+      }
+    }
   }
 }
 
