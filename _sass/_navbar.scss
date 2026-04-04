@@ -67,10 +67,13 @@
     }
   }
 
-  .navbar-nav .nav-item.active > .nav-link {
+  .navbar-nav .nav-item.active > .nav-link,
+  .navbar-nav .nav-item .nav-link.active {
     background-color: inherit;
     font-weight: bolder;
     color: var(--global-theme-color);
+    border-bottom: 2px solid var(--global-theme-color);
+    padding-bottom: 2px;
 
     &:hover {
       color: var(--global-hover-color);

@@ -14,15 +14,13 @@ selected_papers: true
 social: true
 
 announcements:
-  enabled: true
-  scrollable: false
-  limit: 5
+  enabled: false
 
 latest_posts:
   enabled: false
 ---
 
-<div id="about"></div>
+<div id="about" style="scroll-margin-top:80px;"></div>
 
 I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on similarity-preserving hashing (SimHash) for biometric authentication and model quantization for efficient CPU deployment.
 
@@ -32,7 +30,7 @@ Previously, I worked at [Celestra](https://celestra.com/) and [Judgment Labs](ht
 
 ---
 
-<h2 id="experience">Industry Experience</h2>
+<h2 id="experience" style="scroll-margin-top:80px;">Industry Experience</h2>
 
 <div style="display:flex;gap:0.8em;margin-bottom:1em;align-items:flex-start;">
   <img src="/assets/img/logos/openai.svg" alt="OpenAI" style="width:32px;height:32px;margin-top:4px;">
@@ -68,7 +66,7 @@ Previously, I worked at [Celestra](https://celestra.com/) and [Judgment Labs](ht
 
 ---
 
-<h2 id="education">Education</h2>
+<h2 id="education" style="scroll-margin-top:80px;">Education</h2>
 
 <div style="display:flex;gap:0.8em;margin-bottom:1em;align-items:flex-start;">
   <div style="width:36px;height:36px;border-radius:6px;background:#2774AE;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.55em;color:#FFD100;flex-shrink:0;margin-top:4px;">UCLA</div>
