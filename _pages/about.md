@@ -2,12 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Incoming MTS Intern @ <a href="https://openai.com/">OpenAI</a>
+subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Applied Scientist Intern @ <a href="https://www.microsoft.com/">Microsoft</a>
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true
+  image_circular: false
   more_info:
 
 selected_papers: true
@@ -22,11 +22,13 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on similarity-preserving hashing (SimHash) for biometric authentication and model quantization for efficient CPU deployment.
+I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on efficient ML systems for production deployment.
 
 My research interests span **AI agents**, **mechanistic interpretability**, **reinforcement learning**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
 Previously, I worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **OpenAI** as a Member of Technical Staff Intern in Summer 2026.
+
+<!-- pub-break -->
 
 ---
 
@@ -44,7 +46,7 @@ Previously, I worked at [Celestra](https://celestra.com/) and [Judgment Labs](ht
   <img src="/assets/img/logos/microsoft.svg" alt="Microsoft" style="width:32px;height:32px;margin-top:4px;">
   <div>
     <strong>Microsoft</strong> · Applied Scientist Intern <span style="color:var(--global-text-color-light);font-size:0.85em;font-style:italic;">Jan 2026 – Apr 2026</span><br>
-    <span style="font-size:0.9em;color:var(--global-text-color-light);">SimHash for biometric auth; model quantization for CPU deployment (60% size reduction, 2.3× speedup).</span>
+    <span style="font-size:0.9em;color:var(--global-text-color-light);">Efficient ML systems for biometric authentication and on-device deployment.</span>
   </div>
 </div>
 

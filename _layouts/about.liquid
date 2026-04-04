@@ -32,18 +32,30 @@ layout: default
         {% endif %}
         {% if page.social %}
           <div class="social profile-social">
-            <div class="contact-icons">{% social_links %}</div>
+            <div class="contact-icons-labeled">
+              <a href="mailto:{{ site.data.socials.email }}" title="Email"><i class="fa-solid fa-envelope"></i> Email</a>
+              <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" title="Scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
+              <a href="https://x.com/{{ site.data.socials.x_username }}" target="_blank" title="X"><i class="fa-brands fa-x-twitter"></i> X</a>
+            </div>
           </div>
         {% endif %}
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    {% assign parts = content | split: '<!-- pub-break -->' %}
+    <div class="clearfix">{{ parts[0] }}</div>
 
-    <!-- Selected papers (right after about text) -->
+    <!-- Selected papers (between about text and experience) -->
     {% if page.selected_papers %}
       <h2 id="publications" style="scroll-margin-top:80px;">selected publications</h2>
       {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Rest of content (experience, education) -->
+    {% if parts[1] %}
+      <div class="clearfix">{{ parts[1] }}</div>
     {% endif %}
   </article>
 </div>

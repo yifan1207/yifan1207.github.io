@@ -35,6 +35,12 @@ body.sticky-bottom-footer {
 
 // Profile
 .profile {
+  min-width: 200px;
+
+  @media (min-width: 576px) {
+    width: 35%;
+  }
+
   img {
     width: 100%;
     &.rounded-lg {
@@ -46,31 +52,35 @@ body.sticky-bottom-footer {
     margin-top: 0.8rem;
     text-align: center;
 
-    .contact-icons {
-      font-size: 1.4rem !important;
+    .contact-icons-labeled {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
 
       a {
-        margin: 0 0.3rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        border: 1px solid var(--global-divider-color);
+        background-color: var(--global-code-bg-color);
+        color: var(--global-text-color);
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
 
-        i::before {
-          font-size: 1.4rem;
+        i {
+          font-size: 0.85rem;
         }
 
-        img {
-          width: 1.4rem !important;
-          height: 1.4rem !important;
-          margin-bottom: 0 !important;
-        }
-
-        svg {
-          width: 1.4rem !important;
-          height: 1.4rem !important;
-          margin-bottom: 0 !important;
-
-          image {
-            width: 1.4rem !important;
-            height: 1.4rem !important;
-          }
+        &:hover {
+          color: var(--global-theme-color);
+          border-color: var(--global-theme-color);
+          text-decoration: none;
         }
       }
     }
