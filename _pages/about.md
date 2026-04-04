@@ -1,56 +1,468 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Home"
 author_profile: true
+layout: homepage
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+<style>
+/* ===== General ===== */
+.homepage-section {
+  margin-bottom: 2.8em;
+}
+.homepage-section h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.35em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid var(--global-base-color, #11999e);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.homepage-section h2 i {
+  font-size: 0.85em;
+  opacity: 0.7;
+}
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+/* ===== About ===== */
+.about-text {
+  font-size: 0.96em;
+  line-height: 1.75;
+}
+.contact-row {
+  margin-top: 0.8em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.3em 0.75em;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--global-code-background-color, #f5f5f5);
+  color: var(--global-text-color, #333);
+  border: 1px solid var(--global-border-color, #ddd);
+  transition: all 0.2s;
+}
+.contact-pill:hover {
+  background: var(--global-base-color, #11999e);
+  color: #fff;
+  border-color: var(--global-base-color, #11999e);
+  text-decoration: none;
+}
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+/* ===== News ===== */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-list li {
+  padding: 0.5em 0;
+  font-size: 0.92em;
+  border-bottom: 1px solid var(--global-border-color, #eee);
+}
+.news-list li:last-child {
+  border-bottom: none;
+}
+.news-date {
+  font-weight: 700;
+  color: var(--global-base-color, #11999e);
+  margin-right: 0.6em;
+  display: inline-block;
+  min-width: 85px;
+}
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+/* ===== Publications ===== */
+.pub-entry {
+  display: flex;
+  gap: 1.5em;
+  margin-bottom: 2em;
+  padding: 1.2em;
+  border-radius: 10px;
+  background: var(--global-code-background-color, #fafafa);
+  border: 1px solid var(--global-border-color, #e8e8e8);
+  transition: box-shadow 0.2s;
+}
+.pub-entry:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.pub-img {
+  flex-shrink: 0;
+  width: 240px;
+  min-height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--global-border-color, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-border-color, #f0f0f0);
+}
+.pub-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pub-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.pub-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--global-text-color, #333);
+}
+.pub-authors {
+  font-size: 0.9em;
+  color: var(--global-text-color-light, #666);
+  line-height: 1.5;
+}
+.pub-authors .me {
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--global-text-color, #333);
+}
+.pub-venue {
+  font-size: 0.9em;
+  margin-top: 0.15em;
+}
+.pub-venue-name {
+  font-weight: 600;
+}
+.pub-badge {
+  display: inline-block;
+  background: var(--global-base-color, #11999e);
+  color: #fff;
+  font-size: 0.75em;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  margin-right: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.pub-badge.preprint {
+  background: #e67e22;
+}
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.5em;
+}
+.pub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.25em 0.7em;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--global-bg-color, #fff);
+  color: var(--global-text-color, #555);
+  border: 1px solid var(--global-border-color, #ddd);
+  transition: all 0.2s;
+}
+.pub-pill:hover {
+  background: var(--global-base-color, #11999e);
+  color: #fff;
+  border-color: var(--global-base-color, #11999e);
+  text-decoration: none;
+}
+.pub-note {
+  font-size: 0.82em;
+  color: var(--global-text-color-light, #888);
+  line-height: 1.5;
+  margin-top: 0.2em;
+}
+.equal-note {
+  font-size: 0.82em;
+  color: var(--global-text-color-light, #999);
+}
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+/* ===== Experience ===== */
+.exp-entry {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border-radius: 10px;
+  background: var(--global-code-background-color, #fafafa);
+  border: 1px solid var(--global-border-color, #e8e8e8);
+  transition: box-shadow 0.2s;
+}
+.exp-entry:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.exp-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.7em;
+  color: #fff;
+  margin-top: 0.1em;
+}
+.exp-logo.openai { background: #000; }
+.exp-logo.microsoft { background: #00a4ef; }
+.exp-logo.celestra { background: #6c5ce7; }
+.exp-logo.judgment { background: #e17055; }
+.exp-body {
+  flex: 1;
+}
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+.exp-company {
+  font-weight: 700;
+  font-size: 1.02em;
+}
+.exp-date {
+  font-size: 0.82em;
+  color: var(--global-text-color-light, #999);
+  font-style: italic;
+}
+.exp-role {
+  font-size: 0.88em;
+  color: var(--global-text-color-light, #666);
+  margin-top: 0.1em;
+}
+.exp-desc {
+  font-size: 0.86em;
+  margin-top: 0.35em;
+  line-height: 1.55;
+  color: var(--global-text-color-light, #555);
+}
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+/* ===== Education ===== */
+.edu-entry {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  background: var(--global-code-background-color, #fafafa);
+  border: 1px solid var(--global-border-color, #e8e8e8);
+}
+.edu-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #2774AE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.65em;
+  color: #FFD100;
+}
+.edu-body {
+  flex: 1;
+}
+.edu-school {
+  font-weight: 700;
+  font-size: 1.02em;
+}
+.edu-degree {
+  font-size: 0.9em;
+  margin-top: 0.15em;
+}
+.edu-date {
+  font-size: 0.82em;
+  color: var(--global-text-color-light, #999);
+  font-style: italic;
+}
+.edu-courses {
+  font-size: 0.82em;
+  color: var(--global-text-color-light, #777);
+  margin-top: 0.3em;
+  line-height: 1.5;
+}
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .pub-entry {
+    flex-direction: column;
+  }
+  .pub-img {
+    width: 100%;
+    height: 180px;
+  }
+  .exp-header {
+    flex-direction: column;
+  }
+}
+</style>
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+<!-- ==================== ABOUT ==================== -->
+<div class="homepage-section" id="about">
+<h2><i class="fas fa-user"></i> About</h2>
+<div class="about-text">
 
-**Markdown generator**
+I am a student at <b>UCLA</b> studying Computer Science and Applied Mathematics. I am currently an <b>Applied Scientist Intern at Microsoft</b>, working on similarity-preserving hashing (SimHash) for biometric authentication and model quantization for efficient CPU deployment.
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+My research interests span <b>AI agents</b>, <b>mechanistic interpretability</b>, <b>reinforcement learning</b>, and <b>efficient ML systems</b>. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+Previously, I worked at <b><a href="https://celestra.com/">Celestra</a></b> and <b><a href="https://www.judgmentlabs.ai/">Judgment Labs</a></b>. I will be joining <b>OpenAI</b> as a Member of Technical Staff Intern in Summer 2026.
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+<div class="contact-row">
+  <a class="contact-pill" href="mailto:yifanz1207@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+  <a class="contact-pill" href="https://scholar.google.com/citations?user=tUNPDm8AAAAJ"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+  <a class="contact-pill" href="https://github.com/yifan1207"><i class="fab fa-github"></i> GitHub</a>
+  <a class="contact-pill" href="https://www.linkedin.com/in/yifan-zhou127"><i class="fab fa-linkedin"></i> LinkedIn</a>
+</div>
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+</div>
+</div>
+
+<!-- ==================== NEWS ==================== -->
+<div class="homepage-section" id="news">
+<h2><i class="fas fa-newspaper"></i> News</h2>
+<ul class="news-list">
+  <li><span class="news-date">Apr 2026</span> Our paper <i>"Investigating Component Contributions in Multi-Agent ML Systems"</i> is accepted at <b>ICML 2026</b>!</li>
+  <li><span class="news-date">Jan 2026</span> Started as Applied Scientist Intern at <b>Microsoft</b>.</li>
+</ul>
+</div>
+
+<!-- ==================== PUBLICATIONS ==================== -->
+<div class="homepage-section" id="publications">
+<h2><i class="fas fa-book"></i> Publications</h2>
+
+<p class="equal-note">* equal contribution</p>
+
+<div class="pub-entry">
+  <div class="pub-img">
+    <img src="/images/component_contribution.png" alt="Component Contributions in Multi-Agent ML Systems">
+  </div>
+  <div class="pub-text">
+    <div class="pub-title">Investigating Component Contributions in Multi-Agent ML Systems</div>
+    <div class="pub-authors">
+      Junsung Kim*, Ilia Mireskandari*, Seungwan Son*, <span class="me">Yifan Zhou*</span>, Khizer Shahid*, Dylan Yihan Dai*
+    </div>
+    <div class="pub-venue">
+      <span class="pub-badge">ICML 2026</span>
+      <span class="pub-venue-name">International Conference on Machine Learning, 2026</span>
+    </div>
+    <div class="pub-links">
+      <a class="pub-pill" href="https://openreview.net/pdf?id=FOfvTwBGUX"><i class="fas fa-file-pdf"></i> Paper</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ==================== PREPRINTS ==================== -->
+<div class="homepage-section" id="preprints">
+<h2><i class="fas fa-file-lines"></i> Preprints</h2>
+
+<div class="pub-entry">
+  <div class="pub-img">
+    <i class="fas fa-file-alt" style="font-size:3em;color:var(--global-text-color-light,#bbb);"></i>
+  </div>
+  <div class="pub-text">
+    <div class="pub-title">Instruction Tuning Delays Prediction Commitment</div>
+    <div class="pub-authors">
+      <span class="me">Yifan Zhou</span>
+    </div>
+    <div class="pub-venue">
+      <span class="pub-badge preprint">Preprint</span>
+      <span class="pub-venue-name">2025</span>
+    </div>
+    <div class="pub-note">A mechanistic interpretability study showing instruction tuning restructures LLM computation by delaying token commitment ~6 layers, expanding late-layer dimensionality, and implementing a localized "corrective stage" for output style. Validated across 6 architectures.</div>
+    <div class="pub-links">
+      <a class="pub-pill" href="https://github.com/yifan1207/PT-IT-Model-Differences"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ==================== EXPERIENCE ==================== -->
+<div class="homepage-section" id="experience">
+<h2><i class="fas fa-briefcase"></i> Industry Experience</h2>
+
+<div class="exp-entry">
+  <div class="exp-logo openai">OAI</div>
+  <div class="exp-body">
+    <div class="exp-header">
+      <span class="exp-company">OpenAI</span>
+      <span class="exp-date">Jun 2026 -- Sep 2026</span>
+    </div>
+    <div class="exp-role">Member of Technical Staff Intern, Integrity Team</div>
+    <div class="exp-desc">Incoming summer 2026.</div>
+  </div>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-logo microsoft">MS</div>
+  <div class="exp-body">
+    <div class="exp-header">
+      <span class="exp-company">Microsoft</span>
+      <span class="exp-date">Jan 2026 -- Apr 2026</span>
+    </div>
+    <div class="exp-role">Applied Scientist Intern</div>
+    <div class="exp-desc">Research on SimHash for biometric auth and model quantization for CPU deployment (60% size reduction, 2.3x speedup).</div>
+  </div>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-logo celestra">CEL</div>
+  <div class="exp-body">
+    <div class="exp-header">
+      <span class="exp-company">Celestra</span>
+      <span class="exp-date">Sep 2025 -- Dec 2025</span>
+    </div>
+    <div class="exp-role">Research Scientist Intern</div>
+    <div class="exp-desc">Co-authored agent scaffolding research (4,000+ ablations; ICML 2026) and deployed agent stack achieving top-3 on MLE-Bench.</div>
+  </div>
+</div>
+
+<div class="exp-entry">
+  <div class="exp-logo judgment">JL</div>
+  <div class="exp-body">
+    <div class="exp-header">
+      <span class="exp-company">Judgment Labs</span>
+      <span class="exp-date">Jan 2025 -- Sep 2025</span>
+    </div>
+    <div class="exp-role">Member of Technical Staff</div>
+    <div class="exp-desc">First hire; led RL-tuned LLM evaluations (+40-45% alignment over LLM-as-judge baselines) and agent SFT optimization.</div>
+  </div>
+</div>
+
+</div>
+
+<!-- ==================== EDUCATION ==================== -->
+<div class="homepage-section" id="education">
+<h2><i class="fas fa-graduation-cap"></i> Education</h2>
+
+<div class="edu-entry">
+  <div class="edu-logo">UCLA</div>
+  <div class="edu-body">
+    <div class="edu-school">University of California, Los Angeles</div>
+    <div class="edu-degree">B.S. in Computer Science and Applied Mathematics -- GPA: 3.92/4.0</div>
+    <div class="edu-date">Sep 2024 -- Jun 2027 (Expected)</div>
+    <div class="edu-courses">Reinforcement Learning, NLP, Foundations of Machine Learning, Algorithms, Database Systems, Probability Theory, Complex Analysis, Linear Algebra</div>
+  </div>
+</div>
+
+</div>

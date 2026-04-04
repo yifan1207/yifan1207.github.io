@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<style>
+  .homepage-page {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+  @media (min-width: 1024px) {
+    .homepage-page {
+      width: 75% !important;
+      padding-left: 0 !important;
+    }
+  }
+</style>
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page homepage-page" itemscope itemtype="http://schema.org/Person">
+    <div class="page__inner-wrap">
+      <section class="page__content" itemprop="description">
+        {{ content }}
+      </section>
+    </div>
+  </article>
+</div>
