@@ -64,17 +64,27 @@
 document.addEventListener("DOMContentLoaded", function () {
   var sections = ["about", "publications", "experience", "education"];
   var navLinks = document.querySelectorAll("#navbarNav .nav-link[data-section]");
-  var offset = 100;
 
   function setActive() {
-    var scrollPos = window.scrollY + offset;
     var active = sections[0];
+    var viewHeight = window.innerHeight;
+
     for (var i = 0; i < sections.length; i++) {
       var el = document.getElementById(sections[i]);
-      if (el && el.offsetTop <= scrollPos) {
-        active = sections[i];
+      if (el) {
+        var rect = el.getBoundingClientRect();
+        // Section is active if its top has scrolled into the top 40% of viewport
+        if (rect.top <= viewHeight * 0.4) {
+          active = sections[i];
+        }
       }
     }
+
+    // If at bottom of page, activate last section
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      active = sections[sections.length - 1];
+    }
+
     navLinks.forEach(function (link) {
       if (link.getAttribute("data-section") === active) {
         link.classList.add("active");

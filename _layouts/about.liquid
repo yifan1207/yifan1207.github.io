@@ -2,21 +2,25 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+  <div class="about-section">
+    <div class="about-text">
+      <header class="post-header">
+        <h1 class="post-title">
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+            {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        <p class="desc">{{ page.subtitle }}</p>
+      </header>
 
-  <article>
+      <div>{{ content }}</div>
+    </div>
+
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div class="profile">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% assign profile_image_class = 'img-fluid z-depth-1 rounded-lg' %}
@@ -26,9 +30,6 @@ layout: default
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
           %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
         {% if page.social %}
           <div class="social profile-social">
@@ -43,19 +44,17 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
+  </div>
 
-    {% assign parts = content | split: '<!-- pub-break -->' %}
-    <div class="clearfix">{{ parts[0] }}</div>
-
-    <!-- Selected papers (between about text and experience) -->
+  <article>
+    <!-- Selected papers -->
     {% if page.selected_papers %}
+      <hr style="margin-top:2.5rem;margin-bottom:2.5rem;">
       <h2 id="publications" style="scroll-margin-top:80px;">Selected Publications</h2>
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Rest of content (experience, education) -->
-    {% if parts[1] %}
-      <div class="clearfix">{{ parts[1] }}</div>
-    {% endif %}
+    <!-- Experience and Education -->
+    {% include experience_education.liquid %}
   </article>
 </div>

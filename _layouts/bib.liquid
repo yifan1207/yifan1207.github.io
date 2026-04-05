@@ -16,7 +16,12 @@
             {% endif -%}
           >
             {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
+              <a href="{{ site.data.venues[entry.abbr].url }}">
+                {% if site.data.venues[entry.abbr].logo %}
+                  <img src="{{ site.data.venues[entry.abbr].logo | prepend: '/assets/img/logos/' | relative_url }}" alt="{{ entry.abbr }}" style="height:1em;vertical-align:middle;margin-right:0.2em;filter:brightness(0) invert(1);">
+                {% endif %}
+                {{- entry.abbr -}}
+              </a>
             {% else %}
               <div>{{- entry.abbr -}}</div>
             {% endif %}
