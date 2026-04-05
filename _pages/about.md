@@ -22,7 +22,7 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on SimHash for biometric authentication and efficient ML systems for on-device deployment.
+I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on SimHash and efficient ML systems.
 
 My research interests span **mechanistic interpretability**, **reinforcement learning**, **AI agents**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
