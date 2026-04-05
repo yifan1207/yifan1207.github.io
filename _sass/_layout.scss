@@ -38,18 +38,13 @@ body.sticky-bottom-footer {
 .about-section {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2.5rem;
 
   .about-text {
     flex: 1;
-    min-width: 0;
-  }
-}
-
-@media (max-width: 575px) {
-  .about-section {
-    flex-direction: column-reverse !important;
+    min-width: 300px;
   }
 }
 
