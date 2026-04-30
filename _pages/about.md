@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Independent Researcher in Mechanistic Interpretability
+subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Incoming Intern @ <a href="https://openai.com/">OpenAI</a> (Integrity)
 
 profile:
   align: right
