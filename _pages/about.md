@@ -26,4 +26,4 @@ I am a student at **UCLA** studying Computer Science and Applied Mathematics. I 
 
 My broader research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
-Previously, I was an **Applied Scientist Intern at [Microsoft](https://www.microsoft.com/)** working on SimHash and efficient ML systems, and worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **OpenAI** as a Member of Technical Staff Intern on the **Integrity** team (Org Wellness) in Summer 2026.
+Previously, I was an **Applied Scientist Intern at [Microsoft](https://www.microsoft.com/)** working on SimHash and efficient ML systems, and worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **OpenAI** as a Member of Technical Staff Intern on the **Integrity** team in Summer 2026.
