@@ -22,7 +22,7 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing **independent research in mechanistic interpretability**. My main project, **first-divergence factorial diffing**, is a paired-checkpoint protocol that locates how post-training changes the forward pass: at the earliest prefix where a pretrained model and its post-trained descendant prefer different next tokens, I cross their upstream residual state with their downstream late stack to test whether post-training is a portable late-only update or a middle-to-late handoff. Across six dense model families (Gemma, Llama, Qwen, Mistral, OLMo, Qwen2.5-32B), the upstream × late interaction is consistently positive — post-training reshapes computation rather than just rewriting the late-stage decoder.
+I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing **independent research in mechanistic interpretability** — my main project develops **first-divergence factorial diffing**, a paired-checkpoint protocol for measuring how post-training reshapes the forward pass across model families.
 
 My broader research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
