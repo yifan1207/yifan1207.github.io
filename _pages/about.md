@@ -22,7 +22,7 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing [**independent research in mechanistic interpretability**](https://github.com/yifan1207/PT-IT-Model-Differences) — my main project develops **first-divergence factorial diffing**, a paired-checkpoint protocol for measuring how post-training reshapes the forward pass across model families.
+I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing <a href="https://github.com/yifan1207/PT-IT-Model-Differences" style="color:#1a73e8;"><strong>independent research in mechanistic interpretability</strong></a> — my main project develops **first-divergence factorial diffing**, a paired-checkpoint protocol for measuring how post-training reshapes the forward pass across model families.
 
 My broader research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
