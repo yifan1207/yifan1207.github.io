@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Applied Scientist Intern @ <a href="https://www.microsoft.com/">Microsoft</a>
+subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Independent Researcher in Mechanistic Interpretability
 
 profile:
   align: right
@@ -22,8 +22,8 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently an **Applied Scientist Intern at Microsoft**, working on SimHash and efficient ML systems.
+I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing **independent research in mechanistic interpretability** — my main project is on **model diffing** to understand the internal effects of pre-training and why scaling laws work.
 
-My research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
+My broader research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
 
-Previously, I worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **OpenAI** as a Member of Technical Staff Intern in Summer 2026.
+Previously, I was an **Applied Scientist Intern at [Microsoft](https://www.microsoft.com/)** working on SimHash and efficient ML systems, and worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **OpenAI** as a Member of Technical Staff Intern on the **Integrity** team (Org Wellness) in Summer 2026.
