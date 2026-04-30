@@ -14,12 +14,12 @@
   note        = {* Equal contribution}
 }
 
-@article{zhou2025instruction,
+@article{zhou2026firstdivergence,
   abbr        = {Preprint},
-  title       = {Instruction Tuning Delays Prediction Commitment},
+  title       = {First-Divergence Factorial Diffing for Post-Trained Language Models},
   author      = {Zhou, Yifan},
   year        = {2026},
   selected    = {true},
   code        = {https://github.com/yifan1207/PT-IT-Model-Differences},
-  abstract    = {A mechanistic interpretability study showing instruction tuning restructures LLM computation by delaying token commitment ~6 layers, expanding late-layer dimensionality, and implementing a localized "corrective stage" for output style. Validated across 6 architectures.}
+  abstract    = {A paired-checkpoint model-diffing protocol that locates how post-training changes the forward pass. At the earliest prefix where a pretrained checkpoint (PT) and its post-trained descendant (IT) prefer different next tokens, we cross PT/IT upstream residual state with PT/IT downstream late stack and measure the IT-vs-PT divergent-token margin. Across six dense PT/IT pairs (Gemma 3 4B, Llama 3.1 8B, Qwen 3 4B, Mistral 7B, OLMo 2 7B, Qwen2.5 32B), the upstream-by-late interaction is positive in every family, label-aligned under a permutation null, and dissociated from the simple late-only term. Post-training does not behave like a portable late-only update; it makes late computation effective only after earlier layers have shaped the residual stream toward the IT candidate.}
 }
