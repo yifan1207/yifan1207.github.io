@@ -248,6 +248,9 @@
       {% if entry.linkedin %}
         <a href="{{ entry.linkedin }}" target="_blank" rel="noopener" class="btn btn-sm z-depth-0" role="button"><i class="fa-brands fa-linkedin"></i> Post</a>
       {% endif %}
+      {% if entry.openreview %}
+        <a href="{{ entry.openreview }}" target="_blank" rel="noopener" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-comments"></i> OpenReview</a>
+      {% endif %}
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
