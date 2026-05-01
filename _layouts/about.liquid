@@ -35,9 +35,9 @@ layout: default
           <div class="social profile-social">
             <div class="contact-icons-labeled">
               <a href="mailto:{{ site.data.socials.email }}" title="Email"><i class="fa-solid fa-envelope"></i> Email</a>
+              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" title="Scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
               <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
               <a href="https://linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" title="Scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
               <a href="https://x.com/{{ site.data.socials.x_username }}" target="_blank" title="X"><i class="fa-brands fa-x-twitter"></i> X</a>
             </div>
           </div>
@@ -51,6 +51,14 @@ layout: default
     {% if page.selected_papers %}
       <hr style="margin-top:2.5rem;margin-bottom:2.5rem;">
       <h2 id="publications" style="scroll-margin-top:80px;">Selected Publications</h2>
+      <p style="font-size:0.9em;color:var(--global-text-color-light);margin-bottom:0.25rem;">
+        <sup>*</sup> equal contribution
+      </p>
+      <p style="font-size:0.9em;color:var(--global-text-color-light);margin-bottom:1.25rem;">
+        A complete list of publications can be found on my
+        <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" rel="noopener">Google Scholar</a>
+        page.
+      </p>
       {% include selected_papers.liquid %}
     {% endif %}
 

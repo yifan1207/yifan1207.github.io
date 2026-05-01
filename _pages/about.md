@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS + Math @ <a href="https://www.ucla.edu/">UCLA</a> · Incoming Intern @ <a href="https://openai.com/">OpenAI</a> (Integrity)
+subtitle: CS + Math @ <a href="https://www.ucla.edu/" target="_blank">UCLA</a> · Incoming MTS Intern @ <a href="https://openai.com/" target="_blank">OpenAI</a>
 
 profile:
   align: right
@@ -22,8 +22,8 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at **UCLA** studying Computer Science and Applied Mathematics. I am currently doing **[independent research in mechanistic interpretability](https://github.com/yifan1207/PT-IT-Model-Differences)** — my main project develops **first-divergence factorial diffing**, a paired-checkpoint protocol for measuring how post-training reshapes the forward pass across model families.
+I am a student at University of California, Los Angeles studying Computer Science and Applied Mathematics. I am currently conducting independent research in **mechanistic interpretability**, developing methods to analyze how post-training reshapes model behavior via *first-divergence factorial diffing*.
 
-My broader research interests span **mechanistic interpretability**, **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models.
+My broader interests also include **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent system design, LLM evaluation with RL-tuned rewards, and understanding the internal mechanisms of instruction-tuned language models. 
 
-Previously, I was an **Applied Scientist Intern** on the [Microsoft Applied Sciences](https://www.microsoft.com/applied-sciences) team working on SimHash and efficient ML systems, and worked at [Celestra](https://celestra.com/) and [Judgment Labs](https://www.judgmentlabs.ai/). I will be joining **[OpenAI](https://openai.com/)** as a Member of Technical Staff Intern on the **Integrity** team in Summer 2026.
+Previously, I interned as an Applied Scientist at [Microsoft Research](https://www.microsoft.com/en-us/research/), working on SimHash and efficient ML systems. I have also worked at [Celestra](https://celestra.com/), [Judgment Labs](https://www.judgmentlabs.ai/), and [Tencent](https://www.tencent.com/en-us). I will be joining OpenAI (Integrity) as a Member of Technical Staff Intern in Summer 2026.

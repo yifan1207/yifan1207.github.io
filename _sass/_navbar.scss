@@ -59,6 +59,14 @@
     color: var(--global-text-color);
   }
 
+  .navbar-nav .nav-item {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 1rem;
+    }
+  }
+
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
 
@@ -177,7 +185,7 @@
 
 @media (min-width: 576px) {
   #light-toggle {
-    transform: translateY(4px);
+    transform: translateY(-2px);
   }
 }
 

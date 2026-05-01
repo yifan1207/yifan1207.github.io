@@ -2,15 +2,13 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        </a>
-      {% endif %}
+      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </a>
 
       <!-- Navbar Toggle -->
       <button
@@ -29,7 +27,7 @@
       </button>
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav mr-auto flex-nowrap">
+        <ul class="navbar-nav ml-auto flex-nowrap">
           <li class="nav-item">
             <a class="nav-link" href="/#about" data-section="about">About</a>
           </li>
@@ -42,12 +40,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/#education" data-section="education">Education</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#miscellaneous" data-section="miscellaneous">Misc.</a>
+          </li>
         </ul>
       </div>
 
       {% if site.enable_darkmode %}
         <!-- Theme toggle on right -->
-        <div class="toggle-container ml-2">
+        <div class="toggle-container">
           <button id="light-toggle" title="Change theme">
             <i class="fa-half-sun-moon" id="light-toggle-system"></i>
             <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
@@ -59,34 +60,57 @@
   </nav>
 </header>
 
-<!-- Scroll spy: highlight active nav link -->
+<!-- Scroll spy: highlight active nav link, plus custom click scroll targets.
+     Highlight ranges (start inclusive, end exclusive):
+       about         : [0, pubs.top reaches navbar)
+       publications  : [pubs.top at navbar, exp.top at navbar)
+       experience    : [exp.top at navbar, bottom of education visible)
+       education     : [bottom of education visible, max scroll)
+       miscellaneous : { max scroll }                                          -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  var sections = ["about", "publications", "experience", "education"];
   var navLinks = document.querySelectorAll("#navbarNav .nav-link[data-section]");
+  var NAV_OFFSET = 80; // matches scroll-margin-top on section headings
+  var clickedSection = null;
+  var clickedAt = 0;
 
-  function setActive() {
-    var active = sections[0];
-    var viewHeight = window.innerHeight;
+  function maxScroll() {
+    return document.documentElement.scrollHeight - window.innerHeight;
+  }
+  function absoluteTop(el) {
+    return el.getBoundingClientRect().top + window.scrollY;
+  }
 
-    for (var i = 0; i < sections.length; i++) {
-      var el = document.getElementById(sections[i]);
-      if (el) {
-        var rect = el.getBoundingClientRect();
-        // Section is active if its top has scrolled into the top 40% of viewport
-        if (rect.top <= viewHeight * 0.4) {
-          active = sections[i];
-        }
+  function targetScrollFor(section) {
+    var max = maxScroll();
+    if (section === "about") return 0;
+    if (section === "miscellaneous") return max;
+    if (section === "publications") {
+      var pubsEl = document.getElementById("publications");
+      if (!pubsEl) return 0;
+      return Math.min(max, Math.max(0, absoluteTop(pubsEl) - NAV_OFFSET));
+    }
+    if (section === "experience") {
+      // Land where the experience heading reaches the navbar offset.
+      var expEl = document.getElementById("experience");
+      if (expEl) return Math.min(max, Math.max(0, absoluteTop(expEl) - NAV_OFFSET));
+    }
+    if (section === "education") {
+      // Mirror the experience target: land where the bottom of education
+      // first becomes visible — miscellaneous heading is the next anchor.
+      var miscEl = document.getElementById("miscellaneous");
+      if (miscEl) {
+        return Math.min(max, Math.max(0, absoluteTop(miscEl) - window.innerHeight));
       }
+      var eduEl2 = document.getElementById("education");
+      if (eduEl2) return Math.min(max, Math.max(0, absoluteTop(eduEl2) - NAV_OFFSET));
     }
+    return 0;
+  }
 
-    // If at bottom of page, activate last section
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      active = sections[sections.length - 1];
-    }
-
+  function paintActive(section) {
     navLinks.forEach(function (link) {
-      if (link.getAttribute("data-section") === active) {
+      if (link.getAttribute("data-section") === section) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
@@ -94,7 +118,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var section = link.getAttribute("data-section");
+      // Only intercept on pages where these sections exist.
+      if (section !== "about" && !document.getElementById(section)) return;
+      e.preventDefault();
+      clickedSection = section;
+      clickedAt = Date.now();
+      paintActive(section); // immediate visual feedback
+      window.scrollTo({ top: targetScrollFor(section), behavior: "smooth" });
+      history.replaceState(null, "", "/#" + section);
+    });
+  });
+
+  function computeActive() {
+    var active = "about";
+    var pubsEl = document.getElementById("publications");
+    var expEl = document.getElementById("experience");
+    var miscEl = document.getElementById("miscellaneous");
+    // 1px epsilon keeps highlighting stable across sub-pixel scroll positions.
+    if (pubsEl && pubsEl.getBoundingClientRect().top <= NAV_OFFSET + 1) {
+      active = "publications";
+    }
+    if (expEl && expEl.getBoundingClientRect().top <= NAV_OFFSET + 1) {
+      active = "experience";
+    }
+    if (miscEl && miscEl.getBoundingClientRect().top <= window.innerHeight + 1) {
+      active = "education";
+    }
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+      active = "miscellaneous";
+    }
+    return active;
+  }
+
+  function setActive() {
+    // While a click-driven smooth scroll is in flight, keep the clicked tab
+    // highlighted so the highlight matches the user's intent the entire time.
+    if (clickedSection && Date.now() - clickedAt < 1000) {
+      paintActive(clickedSection);
+      return;
+    }
+    paintActive(computeActive());
+  }
+
   window.addEventListener("scroll", setActive);
+  window.addEventListener("resize", setActive);
   setActive();
 });
 </script>
