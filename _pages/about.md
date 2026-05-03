@@ -22,7 +22,7 @@ latest_posts:
 
 <div id="about" style="scroll-margin-top:80px;"></div>
 
-I am a student at University of California, Los Angeles studying Computer Science and Applied Mathematics. I am currently conducting independent research in **mechanistic interpretability**, developing methods to analyze how post-training reshapes model behavior via *first-divergence factorial diffing*.
+I am a student at University of California, Los Angeles studying Computer Science and Applied Mathematics. I am currently conducting independent research in **mechanistic interpretability**, developing methods to analyze how post-training reshapes model behavior — using *first-divergence model diffing* to pinpoint the earliest token where a pretrained model and its instruction-tuned descendant disagree, then decomposing how upstream state and late-stack computation jointly produce that disagreement.
 
 My broader interests also include **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent component analysis, agent behavior monitoring & evaluation, and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion). 
 
