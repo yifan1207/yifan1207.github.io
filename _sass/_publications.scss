@@ -46,6 +46,13 @@
         padding-bottom: 0;
       }
 
+      // Only keep the divider after the first (published) entry; suppress it
+      // between consecutive preprints so they read as one group.
+      &:not(:first-child) {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
       .preview {
         display: inline-block;
       }
