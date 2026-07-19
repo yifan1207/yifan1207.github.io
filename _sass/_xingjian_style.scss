@@ -177,7 +177,7 @@ img {
   color: var(--global-text-color);
   border: 0;
   font-family: var(--site-serif);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -270,6 +270,10 @@ img {
   padding: 24px 0;
 }
 
+.home-page .about-home {
+  padding-top: 0;
+}
+
 .home-page .section + .section {
   border-top: 1px solid var(--global-divider-color);
 }
@@ -287,7 +291,7 @@ img {
 
 .hero {
   display: flow-root;
-  padding: 58px 0 44px;
+  padding: 16px 0 44px;
 }
 
 .hero .portrait {
