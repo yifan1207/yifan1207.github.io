@@ -1,68 +1,64 @@
 ---
 layout: default
 ---
-<div class="post">
-  <div class="about-section">
-    <div class="about-text">
-      <header class="post-header">
-        <h1 class="post-title">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-            {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        </h1>
-        <p class="desc">{{ page.subtitle }}</p>
-      </header>
-
-      <div>{{ content }}</div>
-    </div>
-
-    {% if page.profile %}
-      <div class="profile">
-        {% if page.profile.image %}
+<div class="post home-page">
+  <section id="about" class="section about-home">
+    <div class="hero">
+      {% if page.profile and page.profile.image %}
+        <div class="portrait">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% assign profile_image_class = 'img-fluid z-depth-1 rounded-lg' %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
+          <img
+            src="{{ profile_image_path | relative_url | bust_file_cache }}"
+            alt="{{ site.first_name }} {{ site.last_name }}"
+            width="420"
+            height="420"
+          >
+        </div>
+      {% endif %}
+
+      <div class="prose">
+        <header class="post-header">
+          <h1 class="post-title">
+            {% if site.title == 'blank' %}
+              {{ site.first_name }} {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+            {% if site.chinese_name %}<span class="chinese-name">· {{ site.chinese_name }}</span>{% endif %}
+          </h1>
+          <p class="role">{{ page.subtitle }}</p>
+        </header>
+
+        <div class="about-copy">{{ content }}</div>
+
         {% if page.social %}
-          <div class="social profile-social">
-            <div class="contact-icons-labeled">
-              <a href="mailto:{{ site.data.socials.email }}" title="Email"><i class="fa-solid fa-envelope"></i> Email</a>
-              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" title="Scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
-              <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a href="https://linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-              <a href="https://x.com/{{ site.data.socials.x_username }}" target="_blank" title="X"><i class="fa-brands fa-x-twitter"></i> X</a>
-            </div>
+          <div class="pill-row" aria-label="Contact links">
+            <a class="pill" href="mailto:{{ site.data.socials.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+            <a class="pill" href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="pill" href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i> Scholar</a>
+            <a class="pill" href="https://linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a class="pill" href="https://x.com/{{ site.data.socials.x_username }}" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X</a>
           </div>
         {% endif %}
       </div>
-    {% endif %}
-  </div>
+    </div>
+  </section>
 
-  <article>
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <hr style="margin-top:2.5rem;margin-bottom:2.5rem;">
-      <h2 id="publications" style="scroll-margin-top:80px;">Selected Publications</h2>
-      <p style="font-size:0.9em;color:var(--global-text-color-light);margin-bottom:0.25rem;">
-        <sup>*</sup> equal contribution
-      </p>
-      <p style="font-size:0.9em;color:var(--global-text-color-light);margin-bottom:1.25rem;">
+  {% if page.selected_papers %}
+    <section id="publications" class="section">
+      <div class="pub-header">
+        <h2 class="section-label">Selected Publications</h2>
+      </div>
+      <p class="pub-note"><sup>*</sup> equal contribution</p>
+      <p class="pub-note pub-note-spaced">
         A complete list of publications can be found on my
         <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" rel="noopener">Google Scholar</a>
         page.
       </p>
       {% include selected_papers.liquid %}
-    {% endif %}
+    </section>
+  {% endif %}
 
-    <!-- Experience and Education -->
-    {% include experience_education.liquid %}
-  </article>
+  {% include experience_education.liquid %}
 </div>

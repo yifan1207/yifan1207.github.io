@@ -183,7 +183,21 @@
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
     <div class="periodical">
-      {{ periodical | strip }}
+      {% if entry.abbr %}
+        <span class="venue-badge">
+          {{ entry.abbr -}}
+          {%- if entry.year %} {{ entry.year }}{% endif %}
+        </span>
+        {% if entry.type == 'article' and entry.journal and entry.journal != entry.abbr %}
+          <span>{{ entry.journal }}</span>
+        {% elsif proceedings contains entry.type and entry.booktitle %}
+          <span>{{ entry.booktitle }}</span>
+        {% elsif thesis contains entry.type and entry.school %}
+          <span>{{ entry.school }}</span>
+        {% endif %}
+      {% else %}
+        {{ periodical | strip }}
+      {% endif %}
     </div>
     {% if entry.note %}
       <div class="periodical" style="font-style:italic;color:var(--global-text-color-light);font-size:0.9em;">
