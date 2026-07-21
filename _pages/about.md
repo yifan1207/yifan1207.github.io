@@ -20,7 +20,7 @@ latest_posts:
   enabled: false
 ---
 
-I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I am currently conducting independent research in **mechanistic interpretability**, developing methods to analyze how post-training reshapes model behavior — using _first-divergence model diffing_ to pinpoint the earliest token where a pretrained model and its instruction-tuned descendant disagree, then decomposing how upstream state and late-stack computation jointly produce that disagreement.
+I am a sophomore at UCLA studying Computer Science and Applied Mathematics. **I currently try to understand how post-training reshapes pretrained language models using mechanistic model diffing.**
 
 My broader interests also include **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent component analysis, agent behavior monitoring & evaluation, and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
