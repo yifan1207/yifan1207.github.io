@@ -20,7 +20,7 @@ latest_posts:
   enabled: false
 ---
 
-I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve also done independent research in mechanistic interpretability.
+I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I have also conducted independent research in mechanistic interpretability, studying how post-training reorganizes the division of computational labor across model layers.
 
 My broader interests also include **reinforcement learning**, **multi-agent collaboration and alignment**, and **efficient ML systems**. I have studied how agent scaffolds shape collaboration and team performance, alongside agent behavior monitoring & evaluation and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
