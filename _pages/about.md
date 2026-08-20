@@ -20,7 +20,7 @@ latest_posts:
   enabled: false
 ---
 
-I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I do independent research in **mechanistic interpretability** — using model diffing to compare base and post-trained language models layer by layer, and figure out where instruction tuning actually reshapes what the model computes.
+I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve also done independent research in mechanistic interpretability, comparing base models with their post-trained versions to see how fine-tuning changes the division of labor across layers. My recent work shows that similar behaviors can emerge from very different internal computations.
 
 My broader interests also include **reinforcement learning**, **multi-agent collaboration and alignment**, and **efficient ML systems**. I have studied how agent scaffolds shape collaboration and team performance, alongside agent behavior monitoring & evaluation and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
