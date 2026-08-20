@@ -20,7 +20,7 @@ latest_posts:
   enabled: false
 ---
 
-I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve also done some mech interp research on how post-training changes the division of computational labor across model layers.
+I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve also done some mech interp research comparing base models with their post-trained descendants to understand how post-training reorganizes computation across layers. My recent work shows that models can produce the same target behavior through different dependencies between earlier and later computation.
 
 My broader interests also include **multi-agent collaboration and alignment** and **efficient ML systems**. I have studied how agent scaffolds shape collaboration and team performance, alongside agent behavior monitoring & evaluation and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
