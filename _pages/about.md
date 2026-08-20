@@ -22,6 +22,6 @@ latest_posts:
 
 I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I do independent research in **mechanistic interpretability** — using model diffing to compare base and post-trained language models layer by layer, and figure out where instruction tuning actually reshapes what the model computes.
 
-My broader interests also include **reinforcement learning**, **multi-agent systems**, and **efficient ML systems**. I have worked on multi-agent component analysis, agent behavior monitoring & evaluation, and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
+My broader interests also include **reinforcement learning**, **multi-agent collaboration and alignment**, and **efficient ML systems**. I have studied how agent scaffolds shape collaboration and team performance, alongside agent behavior monitoring & evaluation and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
 Previously, I interned as an Applied Scientist at [Microsoft Research](https://www.microsoft.com/en-us/research/), working on SimHash and efficient ML systems. I have also worked at [Celestra](https://celestra.com/), [Judgment Labs](https://www.judgmentlabs.ai/), and [Tencent](https://www.tencent.com/en-us). I will be joining OpenAI (Integrity) as a Member of Technical Staff Intern in Summer 2026.
