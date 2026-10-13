@@ -20,8 +20,8 @@ latest_posts:
   enabled: false
 ---
 
-I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve done some research in **mech interp**, using model diffing and activation patching to compare base models with their post-trained versions. My work studies **how fine-tuning changes internal representations and how earlier computation shapes what later layers produce.**
+I am a sophomore at UCLA studying Computer Science and Applied Mathematics. I’ve done some research in **mech interp**, using model diffing and activation patching to compare base models with their post-trained versions. I tried to study **how fine-tuning changes internal representations and the interdependence between layers.**
 
 My broader interests also include **multi-agent collaboration and alignment** and **efficient ML systems**. I have studied how agent scaffolds shape collaboration and team performance, alongside agent behavior monitoring & evaluation and CPU-efficient inference systems (SimHash, int8 quantization, ONNX kernel fusion).
 
-Previously, I interned as an Applied Scientist at [Microsoft Research](https://www.microsoft.com/en-us/research/), working on SimHash and efficient ML systems. I have also worked at [Celestra](https://celestra.com/), [Judgment Labs](https://www.judgmentlabs.ai/), and [Tencent](https://www.tencent.com/en-us). I will be joining OpenAI (Integrity) as a Member of Technical Staff Intern in Summer 2026.
+Previously, I interned as an Applied Scientist at [Microsoft Research](https://www.microsoft.com/en-us/research/), working on similarity-preserving hashing and efficient ML systems. I have also worked at [Celestra](https://celestra.com/), [Judgment Labs](https://www.judgmentlabs.ai/), and [Tencent](https://www.tencent.com/en-us). I will be joining OpenAI (Integrity) as a Member of Technical Staff Intern in Summer 2026.
